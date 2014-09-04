@@ -120,7 +120,6 @@ class Marketify_Widget_Featured_Popular_Downloads extends Marketify_Widget {
 
 		$featured_args[ 'date_query' ] = array( array( $timeframe => $frame ) );
 		$popular_args[  'date_query' ] = array( array( $timeframe => $frame ) );
-
 		$featured = new WP_Query( $featured_args );
 		$popular  = new WP_Query( $popular_args );
 
