@@ -8,7 +8,7 @@
  */
 ?>
 
-	<footer id="colophon" class="site-footer <?php echo marketify_theme_mod( 'footer', 'footer-style' ); ?>" role="contentinfo">
+	<footer id="colophon"  style="display:none" class="site-footer <?php echo marketify_theme_mod( 'footer', 'footer-style' ); ?>" role="contentinfo">
 		<div class="container">
 
 			<?php if ( is_active_sidebar( 'footer-1' ) ) : ?>
@@ -75,6 +75,6 @@
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
-
+<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/base.js"></script>
 </body>
 </html>

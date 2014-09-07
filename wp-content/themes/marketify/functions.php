@@ -380,6 +380,17 @@ function marketify_widgets_init() {
 		'before_title'  => '<h1 class="widget-title section-title"><span>',
 		'after_title'   => '</span></h1>',
 	) );
+	
+		/* Homepage preview text */
+	register_sidebar( array(
+		'name'          => __( 'Preview', 'marketify' ),
+		'id'            => 'preview-1',
+		'before_widget' => '<div id="%1$s" class="widget-preview">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<p class="widget-preview-title">',
+		'after_title'   => '</p>',
+	));
+
 
 	/*
 	 * Figure out how many columns the footer has
@@ -845,3 +856,11 @@ if ( class_exists( 'Projects' ) ) {
 if ( defined( 'LI_BASE_DIR' ) || class_exists( 'Love_It_Pro' ) ) {
 	require get_template_directory() . '/inc/integrations/love-it/love-it.php';
 }
+
+//[homelink]
+function the_home_link(){
+	return esc_url( home_url( '/' ) );
+}
+add_shortcode( 'homelink', 'the_home_link' );
+add_filter( 'widget_text', 'shortcode_unautop');
+add_filter( 'widget_text', 'do_shortcode');

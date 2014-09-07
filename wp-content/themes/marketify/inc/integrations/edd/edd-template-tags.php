@@ -470,7 +470,7 @@ function marketify_download_archive_popular( $args = array() ) {
 	if ( is_search() ) {
 		$query_args[ 's' ] = esc_attr( get_search_query() );
 	}
-
+//print_r( $query_args);
 	$popular  = new WP_Query( $query_args );
 
 	return $popular;

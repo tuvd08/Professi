@@ -24,7 +24,11 @@ function marketify_downloads_section_title() {
 		$base  = is_tax() ? single_term_title( '', false ) : edd_get_label_plural();
 		$order = get_query_var( 'orderby' ) ? sprintf( '&nbsp;' . __( 'by %s', 'marketify' ), marketify_edd_sorting_options( get_query_var( 'orderby' ) ) ) : '';
 
-		printf( __( 'All %s%s', 'marketify' ), $base, $order );
+		if (isset($GLOBALS['is_home']) && $GLOBALS['is_home'] == true) {
+			printf( __( 'FEATURED LESSONS', 'marketify' ), $base, $order );
+		} else {
+			printf( __( 'All %s%s', 'marketify' ), $base, $order );
+		}
 	}
 }
 

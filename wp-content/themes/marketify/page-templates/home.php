@@ -5,32 +5,44 @@
  * @package Marketify
  */
 
+$pageid = basename(get_permalink());
+$isHome = (strcmp($pageid, "") == 0 || strcmp($pageid, "Professi") == 0);
+$GLOBALS['is_home'] = $isHome;
 get_header(); ?>
 
-		<?php the_post(); if ( ! ( '' == $post->post_content && '' == $post->post_title ) ) : ?>
-		<header class="page-header">
-			<div class="container">
-				
+	<div class="container clear">
+		<div class="home-container clearfix">
+			<div class="left-container sidebar left">
+				<?php dynamic_sidebar( 'sidebar-download-single' ); ?>
 			</div>
-		</header><!-- .page-header -->
-		<?php endif; rewind_posts(); ?>
 
-	</div>
+			<div id="content" class="right-container site-content row left">
+				<?php if($isHome == true) {?>
+					<div class="download-product-review-details">
+						<div class="home-review-content">
+							<?php if ( is_active_sidebar( 'preview-1' ) ) : ?>
+								<?php dynamic_sidebar( 'preview-1' ); ?>
+							<?php endif; ?>
+						</div>
+					</div>
+				<?php }?>
+				<div class="download-product-review-details content-items">
+				<?php if ( ! is_paged() && ! get_query_var( 'orderby' ) && ! is_page_template( 'page-templates/popular.php' ) ) : ?>
+					<?php get_template_part( 'content-grid-download', 'popular' ); ?>
+				<?php endif; ?>
 
-	<div id="content" class="site-content">
-	    
-	    <?php the_content(); ?>
-	    
-		<section id="primary" class="content-area full">
-			<main id="main" class="site-main" role="main">
+					<section id="primary" class="content-area col-md-<?php echo is_active_sidebar( 'sidebar-download' ) ? '9' : '12'; ?> col-sm-7 col-xs-12">
+						<main id="main" class="site-main" role="main">
 
-				<div class="container">
-					<?php dynamic_sidebar( 'home-1' ); ?>
+						<div class="the-title-home"><?php marketify_downloads_section_title();?></div>
+
+						<?php echo do_shortcode( sprintf( '[downloads number="%s"]', get_option( 'posts_per_page' ) ) ); ?>
+
+						</main><!-- #main -->
+					</section><!-- #primary -->
+					<?php get_sidebar( 'archive-download' ); ?>
 				</div>
-
-			</main><!-- #main -->
-		</section><!-- #primary -->
-
-	</div><!-- #content -->
-
+			</div><!-- #content -->
+		</div>
+	</div>
 <?php get_footer(); ?>

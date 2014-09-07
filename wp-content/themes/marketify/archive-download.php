@@ -20,7 +20,7 @@ get_header(); ?>
 			<?php endif; ?>
 		</h1>
 	</header><!-- .page-header -->
-
+	
 	<?php do_action( 'marketify_entry_before' ); ?>
 
 	<div class="container">
@@ -29,7 +29,7 @@ get_header(); ?>
 			<?php //get_template_part( 'content-grid-download', 'popular' ); ?>
 		<?php endif; ?>
 
-		<div id="content" class="site-content row">
+		<div id="content" class="site-content row left">
 		
 			<div class="left sidebar" style="width:30%;float:left;">
 				<?php dynamic_sidebar( 'sidebar-download-single' ); ?>
