@@ -1845,7 +1845,7 @@ body.product-display-inline .single-project .page-header,
 }
 
 .content-grid-download .entry-image .image-placeholder {
-	min-height: 200px;
+	min-height: 160px;
 	background: #eee;
 	position: relative;
 }
@@ -1902,7 +1902,7 @@ body.product-display-inline .single-project .page-header,
 
 .content-grid-download .entry-image:hover .actions,
 .content-grid-download .entry-image.hover .actions {
-	top: 15%;
+	top: 18%;
 	bottom: auto;
 }
 
@@ -2123,6 +2123,10 @@ body.product-display-inline .single-project .page-header,
 .content-grid-download .edd-cp-container,
 .content-grid-download .edd-cp-container + .edd_purchase_submit_wrapper > .edd-add-to-cart {
 	display: none;
+}
+
+.edd_download_purchase_form .edd_purchase_submit_wrapper {
+	height: 45px;
 }
 
 .download-image-grid-preview {
@@ -4752,7 +4756,7 @@ input.search-field-input {
 	height: 38px; width: 350px;
 }
 
-.buy-info { width: 200px; padding-top: 15px; margin-left: 100px;}
+.buy-info { width: 230px; padding-top: 15px; margin-left: 90px;}
 .buy-info i.buy-icon{
 	width: 44px;height:44px; display: inline-block; float: left;
 	background: url('images/buy_item.png') left center no-repeat;

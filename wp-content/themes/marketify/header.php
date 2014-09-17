@@ -53,7 +53,8 @@
 					</div>
 					<div class="buy-info left">
 						<i class="buy-icon"></i>
-						<span>0 item(s) - $0.00</span>
+						<?php $cart_items = edd_get_cart_contents(); $total = ($cart_items && is_array($cart_items)) ? count($cart_items) : 0; ?>
+						<span><?php echo $total; ?> item(s) - <?php edd_cart_total(); ?></span>
 					</div>
 				</div>
 				<h1 class="site-title" style="display:none"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>

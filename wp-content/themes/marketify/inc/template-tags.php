@@ -26,6 +26,8 @@ function marketify_downloads_section_title() {
 
 		if (isset($GLOBALS['is_home']) && $GLOBALS['is_home'] == true) {
 			printf( __( 'FEATURED LESSONS', 'marketify' ), $base, $order );
+		} else if (isset($GLOBALS['is_search']) && $GLOBALS['is_search'] == true) {
+			printf( __( 'SEACH RESULTS', 'marketify' ), $base, $order );
 		} else {
 			printf( __( 'All %s%s', 'marketify' ), $base, $order );
 		}

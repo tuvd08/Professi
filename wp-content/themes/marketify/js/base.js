@@ -31,9 +31,45 @@
 			menuItem.each(function(i) {
 				$(this).find('a:first').width(w);
 			});
+		},
+		menuSearchAction : function() {
+			
+		},
+		processSearch : function() {
+			var parent = $('#edd_categories_tags_widget-4');
+			var fLis = parent.find('ul:first').find('>li');
+			fLis.find('>a').removeAttr('href');
+			fLis.find('ul').find('a').on('click', function(evt) {
+				evt.preventDefault();
+				var href = $(this).attr('href');
+				var paths = href.split('/')
+				var cat = paths[paths.length -2];
+				var fromSearch = $('#quick-search-form');
+				var input = fromSearch.find('#absc_search_cat:first');
+				var cr = input.val();
+				if(cr.length == 0) {
+					input.val(cat);
+				} else {
+					input.val(cr  + ',' + cat);
+				}
+				console.log(input.val());
+				//
+				fromSearch.find('button.search-submit:first').trigger( "click" );
+			});
+			//
+			if(window.lastSearchCats) {
+				$('#quick-search-form').find('#absc_search_cat:first').val( window.lastSearchCats );
+			}
 		}
+		
 	};
 	
 	$('#input-search-field').on('keydown', Base.enterSearch);
 	Base.widthMenu();
+	//
+	if(window.searchResult && window.searchResult == true) {
+		Base.processSearch();
+	}
+	//
+	window.Base = Base;
 })(jQuery);

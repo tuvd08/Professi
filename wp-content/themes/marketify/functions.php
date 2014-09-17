@@ -864,3 +864,31 @@ function the_home_link(){
 add_shortcode( 'homelink', 'the_home_link' );
 add_filter( 'widget_text', 'shortcode_unautop');
 add_filter( 'widget_text', 'do_shortcode');
+
+
+
+function abcs_search_request( $wp_query ) {
+	if($wp_query->is_search && isset($_GET['s']) && strlen($_GET['s']) > 0) {
+		$located = locate_template( 'search.php' );
+		if ( !empty( $located ) )
+			add_filter( 'template_include', 'get_search_template' );
+	
+		// Generate an array containing the list of selected categories.
+		$cats = array();
+		if(isset($_GET['absc_search_cat'])) {
+			$cats_ = $_GET['absc_search_cat'];
+			$cats = explode(',', $cats_);
+			$GLOBALS['cat_search'] = $cats_;
+		}
+		
+		// Set post_type to post to exclude pages.
+		set_query_var( 'post_type', array( 'post', 'download' ) );
+			
+		//If categories were found
+		if ( !empty( $cats ) ) {			
+				set_query_var( 'download_category', implode( ',', $cats ) );
+		}
+	}
+	return $wp_query;
+}
+add_action( 'pre_get_posts', 'abcs_search_request' );

@@ -6,8 +6,8 @@
  */
 
 $post_type = get_query_var( 'post_type' );
-
-if ( 'download' == $post_type )
-	locate_template( array( 'archive-download.php' ), true );
+$GLOBALS['is_search'] = true;
+if (in_array('download', $post_type))
+	locate_template( array( 'search-download.php' ), true );
 else
 	locate_template( array( 'index.php' ), true );
