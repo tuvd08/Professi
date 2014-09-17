@@ -52,14 +52,33 @@
 				} else {
 					input.val(cr  + ',' + cat);
 				}
-				console.log(input.val());
 				//
 				fromSearch.find('button.search-submit:first').trigger( "click" );
-			});
+			}).attr('title', 'Click on this category to select search.');
 			//
 			if(window.lastSearchCats) {
 				$('#quick-search-form').find('#absc_search_cat:first').val( window.lastSearchCats );
 			}
+			var select_parent = $('#selected-categories');
+			select_parent.find('span.icon-cat').on('click', function() {
+				var rVal = $(this).data('slug');
+				//
+				var fromSearch = $('#quick-search-form');
+				var input = fromSearch.find('#absc_search_cat:first');
+				var crs = input.val().split(',');
+				crs = Base.removeArr(crs, rVal);
+				input.val(crs.join());
+				//
+				fromSearch.find('button.search-submit:first').trigger( "click" );
+			});
+		},
+		removeArr : function(arr, item) {
+      for(var i = arr.length; i--;) {
+				if(arr[i] === item) {
+						arr.splice(i, 1);
+				}
+      }
+      return arr;
 		}
 		
 	};

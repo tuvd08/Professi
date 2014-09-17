@@ -4895,6 +4895,33 @@ input.search-field-input {
 	background-color: #fff;
 }
 
+.content-items .col-md-4 .content-grid-download {
+	margin-bottom: 20px;
+}
+
+#selected-categories .selected-cat span {
+	display: block;
+	line-height: 24px;
+}
+#selected-categories .selected-cat span.pcat {
+	text-transform:uppercase;
+}
+
+#selected-categories .selected-cat span.icon-cat {
+	cursor: pointer;font-size:99%;
+}
+#selected-categories .selected-cat span.icon-cat i.icon{
+	width: 30px; height: 11px;display: inline-block;
+	background: url('images/remove-icon.png') center right no-repeat;
+}
+.left-container .download-single-widget ul.selected-cat li.cat-item-selected {
+	padding-right: 25px;
+}
+.left-container .download-single-widget ul.selected-cat li.cat-item-selected > a {
+	width: 100%;height:10px;
+}
+
+
 
 
 

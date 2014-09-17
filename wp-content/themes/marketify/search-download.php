@@ -7,14 +7,30 @@
  * @package Marketify
  */
 
+//
+get_header();
+//
 $Cats= (isset($GLOBALS['cat_search'])) ? $GLOBALS['cat_search'] : '';
 
-$cat_ = get_query_var('category_name');
+$cat_ = get_query_var('download_category');
 
-// $cat = get_category_by_slug( $slug );
-//$cat_p = get_term( $cat -> category_parent, 'category' );
-//
-get_header(); ?>
+$pcats = array();
+$ccats = array();
+if($cat_ && strlen($cat_) > 0) {
+	$cats = explode(',', $cat_);
+	foreach($cats as $slug) {
+		$iccat = get_term_by( 'slug', $slug, 'download_category' );
+		$ipcat = get_term_by( 'term_id', $iccat->parent, 'download_category' );
+		$key =$ipcat->term_id;
+		$pcats[$key] = $ipcat;
+		if(!isset($ccats[$key])) {
+			$ccats[$key] = array();
+		}
+		array_push($ccats[$key], $iccat);
+	}
+}
+
+?>
 
 	<div class="container clear">
 		<div class="home-container clearfix">
@@ -24,14 +40,25 @@ get_header(); ?>
 					<ul class="edd-taxonomy-widget">
 						<li class="cat-item cat-item-15">
 							<a style="width: 226px;">YOU SELECTED</a>
-							<ul class="children">
-								<li class="cat-item cat-item-20">
-										<a>1 – 2</a>
-										<?php echo $cat_; ?>
+							<ul class="children selected-cat">
+								<?php foreach($pcats as $key=>$pcat) {?>
+								<li class="cat-item cat-item-selected">
+										<?php 
+											echo '<span class="pcat">'.$pcat->name.'</span>'; 
+											$icats = $ccats[$key];
+											foreach($icats as $ccat) {
+												echo '<span title="Click on this category to remove selected search." class="icon-cat" data-slug="'.$ccat->slug.'">'.$ccat->name.'<i class="icon"></i></span>'; 
+											}
+										?>
+										<a>&nbsp;</a>
 								</li>
+								<?php }
+									if(count($pcats) == 0) {
+								?>
 								<li class="cat-item cat-item-21">
-										<a>3 – 5</a>
+										<a>Search in all categories</a>
 								</li>
+								<?php } ?>
 							</ul>
 						</li>
 					</ul>
