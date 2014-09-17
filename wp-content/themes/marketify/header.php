@@ -32,9 +32,9 @@
 			<div class="top-bar clearfix">
 				<div class="right-top-bar right">
 					<ul class="none list-top clearfix">
-						<li class="left"><i class="uiIcon16x16 uiIconTop man_top"></i><a class="actionIcon" href="#">My Account</a></li>
-						<li class="left"><i class="uiIcon16x16 uiIconTop heart_top"></i><a class="actionIcon" href="#">Wishlist</a></li>
-						<li class="left"><i class="uiIcon16x16 uiIconTop arrow_top"></i><a class="actionIcon" href="#">Checkout</a></li>
+						<li class="left"><i class="uiIcon16x16 uiIconTop man_top"></i><a class="actionIcon" href="<?php echo esc_url( home_url( '/' ) ); ?>wp-admin/profile.php">My Account</a></li>
+						<li class="left"><i class="uiIcon16x16 uiIconTop heart_top"></i><a class="actionIcon" href="<?php echo esc_url( home_url( '/' ) ); ?>wish-lists/">Wishlist</a></li>
+						<li class="left"><i class="uiIcon16x16 uiIconTop arrow_top"></i><a class="actionIcon" href="<?php echo esc_url( home_url( '/' ) ); ?>checkout/">Checkout</a></li>
 					</ul>
 				</div>
 			</div>

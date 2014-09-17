@@ -40,6 +40,13 @@ $privacy = get_post_status( $list_id );
 		 * All all items in list to cart
 		*/
 		echo '<p>' . edd_wl_add_all_to_cart_link( array( 'list_id' => $list_id ) ) . '</p>';
+		
+$viewWhishlist = false;
+if(isset($GLOBALS['view']) && $GLOBALS['view'] === 'view' ) {
+		$viewWhishlist = true;
+} 
+if($viewWhishlist === false) {
+		
 	?>
 
 
@@ -52,6 +59,18 @@ $privacy = get_post_status( $list_id );
 	</div>
 
 	<?php
+} else {
+?>
+	<div class="dlcontainer">
+		<?php while ( $downloads->have_posts() ) : $downloads->the_post(); ?>
+			<div class="">
+				<?php get_template_part( 'content-grid', 'download' ); ?>
+			</div>
+		<?php endwhile; ?>
+	</div>
+
+<?php	
+}
 	/**
 	 * Sharing - only shown for public lists
 	*/
