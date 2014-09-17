@@ -6,7 +6,7 @@
  */
 
 $pageid = basename(get_permalink());
-$isHome = (strcmp($pageid, "") == 0 || strcmp($pageid, "Professi") == 0);
+$isHome = (strcmp($pageid, "") == 0 || strcmp($pageid, "Professi") == 0 || strcmp($pageid, "profesi.growthlabs.ca") == 0);
 $GLOBALS['is_home'] = $isHome;
 get_header(); ?>
 
