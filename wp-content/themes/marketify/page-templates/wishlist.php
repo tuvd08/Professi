@@ -57,15 +57,15 @@ get_header(); ?>
 					<?php endif; ?>
 				</div>
 			</div><!-- #secondary -->
+			<div style="padding: 20px;" class="content-area download-product-details col-md-9 col-sm-7 col-xs-12">
+				<section id="primary">
+					<main id="main" class="site-main" role="main">
 
-			<section id="primary" class="content-area col-md-9 col-sm-7 col-xs-12">
-				<main id="main" class="site-main" role="main">
+						<?php the_content(); ?>
 
-					<?php the_content(); ?>
-
-				</main><!-- #main -->
-			</section><!-- #primary -->
-
+					</main><!-- #main -->
+				</section><!-- #primary -->
+			</div>
 		</div><!-- #content -->
 
 	<?php endwhile; ?>

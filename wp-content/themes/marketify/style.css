@@ -4933,6 +4933,77 @@ input.search-field-input {
 	padding: 10px;
 }
 
+.vendor hr {
+	height: 14px;
+	overflow: hidden;
+	border: none;
+	background: none;
+	margin: 0px;
+	font-size: 14px;
+	color: gray;
+	font-weight: bold;
+	padding-left:10px;
+}
+
+.vendor .teacher-author {
+	padding: 0px 10px;
+}
+
+.vendor hr:after {
+	content:"............................................................................................................";
+	letter-spacing: 4px; /* Use letter-spacing to increase space between dots*/
+}
+
+.vendor .right-container .download-product-review-details {
+	margin-top:10px;
+}
+.vendor .glyphicon {
+	font-family:'Glyphicons Halflings' !important;
+	font-size: 9px;
+	top:-1px;
+}
+.vendor .title-top-container {
+	line-height: 30px;
+	margin-top:30px;
+}
+
+.vendor .header .page-title {
+	padding: 0px 10px;
+}
+
+.vendor .content-items .teacher-autors .content-grid-download, 
+.vendor .teacher-autors .edd_download_inner,
+.vendor .teacher-autors .entry-image,
+.vendor .teacher-autors .entry-image .image-placeholder,
+.vendor .teacher-autors .entry-image img,
+.vendor .teacher-autors .overlay {
+	border-radius: 50%;
+}
+.vendor .content-items .teacher-autors .content-grid-download {
+	margin-bottom: 50px;
+}
+.vendor .content-items .teacher-autors .content-grid-download .edd_download_inner {
+	position:relative;
+}
+.vendor .content-items .teacher-autors .content-grid-download .entry-header {
+	position:absolute;
+	background: none;
+	bottom:-45px;
+}
+.vendor .content-items .teacher-autors .content-grid-download .entry-header .entry-title {
+	display: none;
+}
+
+.vendor .entry-image .image-placeholder {
+	min-height: 200px;
+}
+
+.vendor .entry-image img {
+	min-height: 200px;
+}
+
+
+
 .wishlist .view-whishlist .entry-image .image-placeholder {
 	min-height: 160px;
 	background: #eee;

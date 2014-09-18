@@ -16,66 +16,66 @@ if ( ! $author ) {
 
 get_header(); ?>
 
+
+	<div class="container vendor clearfix">
 	<?php while ( have_posts() ) : the_post(); ?>
+		<div class="home-container clearfix">
+			<div class="left-container sidebar left">
+				<?php dynamic_sidebar( 'sidebar-download-single' ); ?>
+			</div>
 
-	<header class="page-header">
-		<h1 class="page-title"><?php the_title(); ?></h1>
-	</header><!-- .page-header -->
-
-	<?php do_action( 'marketify_entry_before' ); ?>
-
-	<div class="container">
-		<div id="content" class="site-content row">
-
-			<div id="secondary" class="author-widget-area col-md-3 col-sm-5 col-xs-12" role="complementary">
-				<div class="download-product-details author-archive">
-					<div class="download-author">
-						<?php echo get_avatar( $author->ID, 130 ); ?>
-						<?php printf( '<a class="author-link" href="%s" rel="author">%s</a>', marketify_edd_fes_author_url( $author->ID ), '' != $author->display_name ? esc_attr( $author->display_name ) : esc_attr( $author->user_login ) ); ?>
-						<span class="author-joined"><?php printf( __( 'Author since: %s', 'marketify' ), date_i18n( 'Y', strtotime( $author->user_registered ) ) ); ?></span>
-					</div>
-
-					<?php if ( '' != $author->description ) : ?>
-
-					<div class="download-author-bio">
-
-						<?php echo esc_attr( $author->description ); ?>
-
-					</div>
-
-					<?php endif; ?>
-
-					<div class="download-author-sales">
-						<strong><?php echo marketify_count_user_downloads( $author->ID ); ?></strong>
-
-						<?php echo _n( edd_get_label_singular(), edd_get_label_plural(), marketify_count_user_downloads( $author->ID ), 'marketify' ); ?>
-					</div>
-
-					<?php if ( marketify_entry_author_social( $author->ID ) ) : ?>
-					<div class="download-author-social">
-						<?php echo marketify_entry_author_social( $author->ID ); ?>
-					</div>
-					<?php endif; ?>
-
-					<div class="download-author-message">
-						<?php echo do_shortcode( '[fes_vendor_contact_form id="' . $author->ID . '"]' ); ?>
-					</div>
+			<div id="content" class="right-container site-content row left">
+				<div class="title-top-container header clearfix">
+					<div class="title-top page-title fontsforweb_fontid_9785 left">O U R&nbsp; T E A C H E R&nbsp;  A U T O R S</div>
+					<div class="title-right right"><a href="#">See all <i class="glyphicon glyphicon-play"></i></a></div>
 				</div>
-			</div><!-- #secondary -->
+				<div class="download-product-review-details content-items clearfix">
 
-			<section id="primary" class="content-area col-md-9 col-sm-7 col-xs-12">
-				<main id="main" class="site-main" role="main">
+					<section id="primary" class="content-area col-md-12 col-sm-7 col-xs-12">
+						<main id="main" class="site-main" role="main">
 
-					<div class="entry-content">
-						<?php the_content(); ?>
-					</div>
+							<div class="the-title-home">OUR TEACHER AUTORS</div>
+							<div class="teacher-autors clearfix">
+								<?php echo do_shortcode( sprintf( '[downloads number="%s"]', get_option( 'posts_per_page' ) ) ); ?>
+							</div>
 
-				</main><!-- #main -->
-			</section><!-- #primary -->
+						</main><!-- #main -->
+					</section><!-- #primary -->
 
-		</div><!-- #content -->
-	</div>
+				</div>
+				<div class="title-top-container header clearfix">
+					<div class="title-top page-title fontsforweb_fontid_9785">F E A T U R E D&nbsp;  T E A C H E R&nbsp;  A U T H O R</div>
+				</div>
+				<div class="teacher-author">
+					<hr/>
+					
+					<hr/>
+				</div>
+				<div class="title-top-container header clearfix">
+					<div class="title-top page-title fontsforweb_fontid_9785 left">C R E A T E D&nbsp;  B Y&nbsp;  T E A C H E R S</div>
+					<div class="title-right right"><a href="#">See all <i class="glyphicon glyphicon-play"></i></a></div>
+				</div>
+				<div class="download-product-review-details content-items clearfix">
 
+					<section id="primary" class="content-area col-md-12 col-sm-7 col-xs-12">
+						<main id="main" class="site-main" role="main">
+
+							<div class="the-title-home">FEATURED LESSONS</div>
+							<div class="clearfix">
+								<?php echo do_shortcode( sprintf( '[downloads number="%s"]', get_option( 'posts_per_page' ) ) ); ?>
+							</div>
+
+						</main><!-- #main -->
+					</section><!-- #primary -->
+
+				</div>
+				
+				
+				
+				
+				
+			</div><!-- #content -->
+		</div>
 	<?php endwhile; ?>
-
+	</div>
 <?php get_footer(); ?>
