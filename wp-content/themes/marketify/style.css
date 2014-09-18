@@ -4933,7 +4933,7 @@ input.search-field-input {
 	padding: 10px;
 }
 
-.vendor hr {
+.vendor hr, .view-whishlist hr {
 	height: 14px;
 	overflow: hidden;
 	border: none;
@@ -4943,13 +4943,14 @@ input.search-field-input {
 	color: gray;
 	font-weight: bold;
 	padding-left:10px;
+	line-height:20px;
 }
 
 .vendor .teacher-author {
 	padding: 0px 10px;
 }
 
-.vendor hr:after {
+.vendor hr:after, .view-whishlist hr:after {
 	content:"............................................................................................................";
 	letter-spacing: 4px; /* Use letter-spacing to increase space between dots*/
 }
@@ -5031,7 +5032,7 @@ input.search-field-input {
 	position:relative;
 }
 .wishlist .view-whishlist .entry-header {
-	padding: 10px !important;
+	padding: 10px 0px 0px 20px !important;
 	float: left;
 }
 .wishlist .entry-image img{
@@ -5040,6 +5041,86 @@ input.search-field-input {
 	width: auto !important;
 }
 
+.viewWhishlist .entry-title {
+	font-size: 16px;
+	font-weight: normal;
+	color: #eee;
+}
+
+.viewWhishlist .entry-title {
+	font-size: 16px;
+	font-weight: normal;
+	color: #6b6b6b;
+}
+.viewWhishlist .entry-title .bookName {
+	color: #010101;
+}
+.viewWhishlist .entry-meta .user a {
+	color: #010101;
+}
+.viewWhishlist .entry-excerpt {
+	width: 350px;
+	font-size: 12px;
+	line-height:18px;
+	text-align:justify;
+	word-break: break-word;
+}
+
+.whishlist-footer {
+	width: 165px;
+	padding: 25px 0px 0px 0px;
+	margin-left:40px;
+}
+
+.whishlist-footer .price{
+	font-weight: bold;
+	font-size: 16px;
+}
+.whishlist-footer .type{
+	line-height:14px;
+}
+.whishlist-footer .edit-licence {
+	margin: 8px 0px;
+}
+.whishlist-footer .remove {
+	display: block;
+	vertical-align:top;
+	margin-top: 5px;
+}
+.whishlist-footer .remove i.icon{
+	width: 19px; height:25px;display:inline-block;
+	background: url('images/remove-icon.png') center right no-repeat
+}
+.whishlist-footer .order {
+	background: #b4d2d0;
+	color: #fff;
+	display: block;
+	height: 28px;
+	font-size: 13px;
+	line-height:28px;
+	text-align:center;
+}
+
+
+
+
+.view-icon-list {
+	vertical-align:top;
+	height:25px;
+	margin-top: 10px;
+	padding-left: 10px;
+}
+.view-icon-list a {
+	display:inline-block;
+	width: 30px; height:28px; 
+	background-image: url('images/view-icon-list.png');
+}
+.view-icon-list .list {
+	background-position: top right;
+}
+.view-icon-list .box{
+	background-position: top left;
+}
 
 
 

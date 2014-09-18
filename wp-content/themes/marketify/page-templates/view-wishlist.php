@@ -15,7 +15,7 @@ $GLOBALS['view'] = $pageid;
 	<div class="wishlist">
 		<div id="content" class="site-content row content-items">
 
-			<div id="primary" class="content-area col-lg-10 col-lg-offset-1 col-md-12">
+			<div id="primary" class="content-area">
 				<main id="main" class="site-main" role="main">
 
 				<?php if ( have_posts() ) : ?>
