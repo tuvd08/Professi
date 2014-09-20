@@ -205,9 +205,12 @@ function marketify_content_nav( $nav_id ) {
 		if ( ! $next && ! $previous )
 			return;
 	}
-
+	$viewWhishlist = false;
+	if(isset($GLOBALS['view']) && $GLOBALS['view'] === 'view' ) {
+			$viewWhishlist = true;
+	}
 	// Don't print empty markup in archives if there's only one page.
-	if ( $wp_query->max_num_pages < 2 && ( is_home() || is_archive() || is_search() ) )
+	if ( ($wp_query->max_num_pages < 2 && ( is_home() || is_archive() || is_search())) || $viewWhishlist === true)
 		return;
 
 	$nav_class = ( is_single() ) ? 'post-navigation' : 'paging-navigation';

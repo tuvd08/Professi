@@ -7,7 +7,6 @@
 */
 
 $list_id = get_query_var( 'view' );
-
 // gets the list
 $downloads = edd_wl_get_wish_list( $list_id );
 
@@ -15,12 +14,18 @@ if ( ! is_array( $downloads ) ) {
 	return;
 }
 
+$viewWhishlist = false;
+if(isset($GLOBALS['view']) && $GLOBALS['view'] === 'view' ) {
+		$viewWhishlist = true;
+}
+
 $downloads = wp_list_pluck( $downloads, 'id' );
 
 $downloads = new WP_Query( array(
 	'post_type'   => 'download',
 	'post_status' => 'publish',
-	'post__in'    => $downloads
+	'post__in'    => $downloads,
+	'posts_per_page' => 2
 ) );
 
 // get list post object
@@ -29,10 +34,6 @@ $list = get_post( $list_id );
 remove_filter( 'the_title', 'edd_wl_the_title', 10, 2 );
 //status
 $privacy = get_post_status( $list_id );
-$viewWhishlist = false;
-if(isset($GLOBALS['view']) && $GLOBALS['view'] === 'view' ) {
-		$viewWhishlist = true;
-}
 //page-title fontsforweb_fontid_9785
 ?>
 <?php if ( $downloads->have_posts() ) : ?>
@@ -74,7 +75,28 @@ if($viewWhishlist === false) {
 			</div>
 		<?php endwhile; ?>
 	</div>
-
+	<div class="view-whishlist">
+		<hr/><br/>
+		<?php 
+			$current_page = max( 1, get_query_var('paged') );
+			$max_current = ($current_page - 1) * 10  + $downloads->post_count;
+			$max_pages = $downloads->max_num_pages;
+			echo $downloads->current_post;
+			print_r($downloads);
+		 ?>
+		<div class="clearfix">
+			<div class="left">
+				<span>Showing </span><span><?php echo $downloads->post_count; ?>-<?php echo $max_current; ?> of <?php echo $downloads->found_posts; ?></span>
+				<?php
+				if($current_page < $max_pages) {
+					echo get_next_posts_link('next');	
+				}
+				?>
+			</div>
+			<div class="right"><?php echo $current_page; ?></div>
+		</div>
+		</div><br/>
+	</div>
 <?php	
 }
 	/**
