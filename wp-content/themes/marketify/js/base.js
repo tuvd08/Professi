@@ -71,6 +71,19 @@
 				//
 				fromSearch.find('button.search-submit:first').trigger( "click" );
 			});
+			//
+			
+			var selext = $('#selext-orderby');
+			if(window.currentSelect) {
+				selext.val(window.currentSelect);
+			}
+			selext.on('change', function(evt) {
+				var fromSearch = $('#quick-search-form');
+				fromSearch.find('#search_order:first').val($(this).val());
+				//
+				fromSearch.find('button.search-submit:first').trigger( "click" );
+			});
+			
 		},
 		removeArr : function(arr, item) {
       for(var i = arr.length; i--;) {

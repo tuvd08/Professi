@@ -16,7 +16,7 @@ if ( is_page( $view_page ) ) {
 * 
 */
 $viewWhishlist = false;
-if(isset($GLOBALS['view']) && $GLOBALS['view'] === 'view' ) {
+if(isset($GLOBALS['view']) && $GLOBALS['view'] === 'viewWhishlist' ) {
 		$viewWhishlist = true;
 } 
 if($viewWhishlist === false) {

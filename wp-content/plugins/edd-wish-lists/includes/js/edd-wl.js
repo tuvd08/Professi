@@ -130,7 +130,7 @@ jQuery(document).ready(function ($) {
                 list_id: list_id,
                 nonce: edd_scripts.ajax_nonce
             };
-
+console.log(data);
          $.ajax({
             type: "POST",
             data: data,

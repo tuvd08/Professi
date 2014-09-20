@@ -14,4 +14,5 @@
 	</label>
 	<input type="hidden" name="post_type" value="download" />
 	<input type="hidden" name="absc_search_cat" id="absc_search_cat" value="" />
+	<input type="hidden" name="search_order" id="search_order" value="title" />
 </form>

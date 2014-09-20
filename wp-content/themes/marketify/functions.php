@@ -888,6 +888,19 @@ function abcs_search_request( $wp_query ) {
 		if ( !empty( $cats ) ) {			
 				set_query_var( 'download_category', implode( ',', $cats ) );
 		}
+		//
+		if(isset($_GET['search_order'])) {
+			$order = $_GET['search_order'];
+			$GLOBALS['search_order'] = $order;
+			set_query_var( 'orderby', $order );
+			if($order === 'date') {
+				set_query_var( 'order', 'DESC' );
+			} else if($order === 'rand') {
+			} else {
+				set_query_var( 'order', 'ASC' );
+			}
+		}
+		
 	}
 	return $wp_query;
 }

@@ -29,10 +29,10 @@ if($cat_ && strlen($cat_) > 0) {
 		array_push($ccats[$key], $iccat);
 	}
 }
-
+	global $wp_query;
 ?>
 
-	<div class="container clear">
+	<div class="container result-search clear">
 		<div class="home-container clearfix">
 			<div class="left-container sidebar left">
 				<aside id="selected-categories" class="widget download-single-widget widget_edd_categories_tags_widget">
@@ -92,11 +92,69 @@ if($cat_ && strlen($cat_) > 0) {
 					</section><!-- #primary -->
 					<?php get_sidebar( 'archive-download' ); ?>
 				</div>
+			
+				<div class="result-info clearfix">
+					<div class="result fontsforweb_fontid_9785 left"><?php echo $wp_query->found_posts;?> results</div>
+					<div class="result-selectbox left">
+						<span>sort by:</span>
+						<select id="selext-orderby" class="form-control">
+							<option value="title">Name</option>
+							<option value="date">Date</option>
+							<option value="rating">Rating</option>
+							<option value="rand">Randome</option>
+						</select>
+					</div>
+					<div class="result-view-type fontsforweb_fontid_9785 right">
+						<div class="view-icon-list">
+							<span>view: </span>
+							<a class="view box" href="#"></a>
+							<a class="view list" href="#"></a>
+							<a class="view box-squares" href="#"></a>
+						</div>
+					</div>
+				</div>
+<?php
+wp_reset_query(); 
+
+$downloads = new WP_Query( array(
+	'post_type'   => 'download',
+	'post_status' => 'publish',
+	'download_category'    => $cat_,
+	'posts_per_page' => 3
+) );
+
+$GLOBALS['view'] = "viewWhishlist";
+?>			
+				<div class="wishlist">
+					<div class="dlcontainer">
+						<?php while ( $downloads->have_posts() ) : $downloads->the_post(); ?>
+							<div class="">
+								<?php get_template_part( 'content-grid', 'download' ); ?>
+							</div>
+						<?php endwhile; ?>
+					</div>
+				</div>
+
+<?php 
+	wp_reset_query(); 
+	$GLOBALS['view'] = "";
+?>
+
 			</div><!-- #content -->
 		</div>
 	</div>
 <script type="text/javascript">
 	window.searchResult = true;
-	window.lastSearchCats = '<?php echo $Cats; ?>';
+	window.currentSelect = '<?php echo (isset($GLOBALS['search_order']) ? $GLOBALS['search_order'] : ''); ?>';
+	window.lastSearchCats = '<?php echo $cat_; ?>';
 </script>
+<script type='text/javascript'>
+	var edd_wl_scripts = {
+		"wish_list_page":"<?php echo edd_wl_get_wish_list_uri();?>",
+		"wish_list_add":"<?php echo edd_wl_get_wish_list_create_uri();?>",
+		"ajax_nonce":"<?php echo wp_create_nonce( 'edd_wl_ajax_nonce' );?>"
+	};
+</script>
+<script type="text/javascript" src="<?php echo content_url(); ?>/plugins/edd-wish-lists/includes/js/edd-wl.min.js?ver=1.0.6"></script>
+<script type="text/javascript" src="<?php echo content_url(); ?>/plugins/edd-wish-lists/includes/js/modal.min.js?ver=1.0.6"></script>
 <?php get_footer(); ?>

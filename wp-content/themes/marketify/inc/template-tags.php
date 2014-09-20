@@ -206,7 +206,7 @@ function marketify_content_nav( $nav_id ) {
 			return;
 	}
 	$viewWhishlist = false;
-	if(isset($GLOBALS['view']) && $GLOBALS['view'] === 'view' ) {
+	if(isset($GLOBALS['view']) && $GLOBALS['view'] === 'viewWhishlist' ) {
 			$viewWhishlist = true;
 	}
 	// Don't print empty markup in archives if there's only one page.

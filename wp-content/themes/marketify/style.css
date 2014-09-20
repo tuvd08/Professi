@@ -111,10 +111,6 @@ textarea,
 	-webkit-font-smoothing: antialiased;
 }
 
-#page {
-	overflow-x: hidden;
-}
-
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
 	clear: both;
@@ -3302,7 +3298,7 @@ body .marketify_widget_slider_hero .soliloquy-theme-classic .soliloquy-pager {
 
 * */
 
-.wishlist .view-whishlist .entry-image,
+.wishlist .view-whishlist .entry-image,.page-id-22 .content-area, .page-id-23 .content-area,
 .download-single-widget,
 .download-product-details,
 .download-product-review-details {
@@ -4824,6 +4820,7 @@ input.search-field-input {
 .left-container .download-single-widget ul.children > li.cat-item {
 	margin: 0px;
 	margin-top: 10px;
+	position: relative;
 }
 .left-container .download-single-widget ul.children > li > a {
 	height: 25px;
@@ -4842,6 +4839,24 @@ input.search-field-input {
 	margin-top: 32px;
 	padding: 25px 0px;
 	background: #fff;
+}
+
+
+.left-container .download-single-widget ul.children ul.children {
+	position: absolute;
+	background: #fff;
+	top: -2px;
+	left: 225px;
+	z-index: 1000;
+	border: solid 1px #b7b7b7;
+	border-radius: 6px;
+	padding: 10px;
+	min-width: 200px;
+	display: none;
+}
+
+.left-container .download-single-widget ul.children > li:hover ul.children {
+	display: block;
 }
 
 .download-product-review-details .home-review-content {
@@ -5116,6 +5131,9 @@ input.search-field-input {
 	margin-top: 10px;
 	padding-left: 10px;
 }
+.view-icon-list span {
+	vertical-align:top;
+}
 .view-icon-list a {
 	display:inline-block;
 	width: 30px; height:28px; 
@@ -5126,6 +5144,10 @@ input.search-field-input {
 }
 .view-icon-list .box{
 	background-position: top left;
+}
+
+.view-icon-list .box-squares {
+	background: url('images/view-icon-box.png') top left;
 }
 
 
@@ -5146,6 +5168,203 @@ input.search-field-input {
 }
 .footer li:hover > a {
 }
+
+.result-info {
+	margin-top: 25px;
+	padding: 0px 30px;
+}
+
+.result-info .result {
+	width: 30%;
+}
+.result-info .result-selectbox {
+	width: 33%;
+}
+.result-info .result-selectbox .form-control {
+	width: 150px;
+	display: inline-block;
+	line-height: 18px;
+	padding: 0px 12px;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 16px;
+	height: 30px;
+}
+.result-info .result-view-type .view-icon-list {
+	padding: 0;margin-top: 0px;
+}
+.result-info .result-view-type .view-icon-list a {
+	width: 27.5px;
+}
+
+.whishlist-footer .ratings {
+	margin: 5px 0px 0px 0px;
+}
+
+.whishlist-footer .star-ratings {
+	margin: -5px 0px 8px 0px;
+}
+
+.star {
+	width: 12px;height:11px;
+	display: inline-block;
+}
+.star-full {
+	background: url('images/star12x11.png') top left;
+}
+.star-half {
+	background: url('images/star-half12x11.png') top left;
+}
+.star-no {
+	background: url('images/star-no12x11.png') top left;
+	opacity: 0.6;
+	filter: alpha(opacity=60);
+}
+
+.whishlist-footer .file-type {
+	margin-top: 5px;
+}
+
+.file-type span {
+	font-weight:bold;
+}
+
+.whishlist-footer .add-wish-list {
+	margin-top: 20px;
+}
+
+i.add-wl {
+	width: 11px;height:11px;
+	background: url('images/add-wl11x11.png') top left;
+	display: inline-block;
+	margin-right:8px;
+}
+
+.gray-light {
+	color: #6c7171;
+}
+
+.teacher-container {
+}
+
+.teacher-container .teacher-info{
+	width: 66%;
+	font-size:12px;
+}
+
+.teacher-container .teacher-info .content-items {
+	margin-top: 30px;
+}
+
+.teacher-container .teacher-info .image-info {
+	width: 230px;
+}
+.vendor .teacher-container .teacher-info .content-grid-download {
+	margin: 0px;
+	margin-bottom:0px;
+	width: 180px;
+}
+.teacher-container .teacher-info .content-grid-download img {
+	height: 160px; min-height: 160px;
+}
+
+
+.teacher-container .teacher-info .teacher-name {
+	font-size: 24px;
+	line-height: 26px;
+}
+.teacher-container .teacher-info .teacher-local {
+	margin-top: -1px
+}
+.teacher-container .teacher-info .teacher-ratings {
+	margin-top: 20px
+}
+.teacher-container .teacher-info .teacher-follow {
+	margin-top: 10px
+}
+.teacher-container .teacher-info .teacher-follow img {
+	margin: 1px -2px 0px 0px;
+	vertical-align:top;
+}
+
+
+
+.teacher-container .teacher-info .form-horizontal {
+	margin-top: 45px;
+	padding: 0px;
+}
+.teacher-container .teacher-info .form-horizontal span {
+	display: inline-block;
+}
+
+.teacher-container .teacher-info .form-horizontal .control-label {
+	text-transform: uppercase;
+	width: 100px;
+	padding-right: 20px;
+	color: #1a1a1a;
+}
+.teacher-container .teacher-info .form-horizontal .control-quote {
+	margin: 50px 0px 50px 120px;
+	font-style:italic;
+}
+.p-quote {
+	position: relative;
+	display: inline-block;
+}
+
+.quote {
+	position: absolute;
+	width: 28px; height: 20px;
+	background: url('images/quote.png');
+}
+
+.p-quote .start-qt {
+	top: -8px;
+	left: -30px;
+	background-position: top;
+}
+.p-quote .end-qt {
+	top: 2px;
+	right:-30px;
+	background-position: bottom;
+}
+
+
+.teacher-container .teacher-dl{
+	width: 33%;
+	padding: 20px;
+}
+.teacher-container .teacher-dl .content-grid-download{
+	margin-bottom: 20px;
+}
+.teacher-container .teacher-dl .content-grid-download .entry-title {
+	font-size: 12.5px;
+	margin-top: 3px
+}
+
+.vendor .teacher-dl .entry-image .image-placeholder, .vendor .teacher-dl .entry-image img {
+	min-height: 160px;
+}
+
+
+.page-id-22 .row, .page-id-23 .row { margin-left: 0px; margin-right:0px;}
+
+.page-id-22 .content-area, .page-id-23 .content-area {
+	max-width: 980px;
+	margin: 20px auto;
+	width: 100%;
+	float: none;
+	padding:20px;
+}
+
+
+
+
+
+
+
+
+
+
 
 
 

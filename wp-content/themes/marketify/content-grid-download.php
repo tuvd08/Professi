@@ -4,7 +4,7 @@
  */
  
 $clazz = 'content-grid-download';
-if(isset($GLOBALS['view']) && $GLOBALS['view'] === 'view' ) {
+if(isset($GLOBALS['view']) && $GLOBALS['view'] === 'viewWhishlist' ) {
 		$clazz = 'view-whishlist clearfix';
 } 
 ?>

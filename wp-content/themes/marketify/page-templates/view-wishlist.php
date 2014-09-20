@@ -9,6 +9,10 @@ get_header();
 	
 $pageid = basename(get_permalink());
 $GLOBALS['view'] = $pageid;
+if($pageid === 'view') {
+	$GLOBALS['view'] = 'viewWhishlist';
+}
+//
 ?>
 
 <div class="container">
@@ -45,4 +49,11 @@ $GLOBALS['view'] = $pageid;
 		</div>
 	</div>
 </div>
+<script type='text/javascript'>
+	var edd_wl_scripts = {
+		"wish_list_page":"<?php echo edd_wl_get_wish_list_uri();?>",
+		"wish_list_add":"<?php echo edd_wl_get_wish_list_create_uri();?>",
+		"ajax_nonce":"<?php echo wp_create_nonce( 'edd_wl_ajax_nonce' );?>"
+	};
+</script>
 <?php get_footer(); ?>
