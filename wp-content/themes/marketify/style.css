@@ -4730,20 +4730,21 @@ ul.none li, ul.edd-taxonomy-widget li {
 }
 .site-branding {
 	background: #f8f8f8 url('images/branding_bg.png') left bottom repeat-x;
+	height: 75px;
 }
 .branding-container {
 	height: 75px; padding-left: 150px;
 	width: 98%; margin:auto;
 }
 .container{padding:0px; margin:auto;}
-@media (min-width:768px){.container{width:1140px}}
-@media (min-width:992px){.container{width:1140px}}
+@media (min-width:768px){.container{width:100%;max-width:1140px;}}
+@media (min-width:992px){.container{width:100%;max-width:1140px;}}
 @media (min-width:1200px){.container{width:100%; max-width:1350px;}}
-@media (min-width:1360px){.container{width:1350px}}
+@media (min-width:1360px){.container{width:1350px;}}
 
-.log_header {width: 400px; color: #797474; padding-top: 25px;}
-.log_header .site-description-header {display:inline-block; padding-left: 25px;}
-.search-forms {padding-top: 15px;}
+.log_header {width: 400px; color: #797474; vertical-align:middle;}
+.log_header .site-description-header {display:inline-block; padding-left: 25px;margin-top:2px;}
+.search-forms {padding-top: 10px;vertical-align:middle;}
 input.search-field-input {
 	background: #fff url('images/icon_input_search.png') right no-repeat;
 	color: #a2a2a2;
@@ -4752,7 +4753,7 @@ input.search-field-input {
 	height: 38px; width: 350px;
 }
 
-.buy-info { width: 230px; padding-top: 15px; margin-left: 90px;}
+.buy-info { width: 230px;vertical-align:middle;}
 .buy-info i.buy-icon{
 	width: 44px;height:44px; display: inline-block; float: left;
 	background: url('images/buy_item.png') left center no-repeat;

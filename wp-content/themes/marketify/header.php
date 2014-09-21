@@ -39,26 +39,29 @@
 				</div>
 			</div>
 
-			<div class="site-branding">
-				<div class="branding-container clearfix" >
-					<div class="log_header left">
+
+			<table class="site-branding" style="margin:0px">
+				<tr>
+					<td class="left-bn" style="width:10%"></td>
+					<td class="log_header" style="width:425px;min-width:350px;max-width:430px;">
 					<?php $header_image = get_header_image(); ?>
 					<?php if ( ! empty( $header_image ) ) : ?>
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home" class="custom-header"><img src="<?php echo esc_url( $header_image ); ?>" alt=""></a>
 					<?php endif; ?>
 						<div class="site-description-header"><?php bloginfo( 'description' ); ?></div>
-					</div>
-					<div class="search-forms left">
-						<?php locate_template( array( 'searchform-header.php' ), true ); ?>
-					</div>
-					<div class="buy-info left">
+					</td>
+					<td class="search-forms" style="width:450px;min-width:350px;max-width:450px;">
+					<?php locate_template( array( 'searchform-header.php' ), true ); ?>
+					</td>
+					<td class="buy-info" style="width:230px;min-width:230px; max-width:250px;">
 						<i class="buy-icon"></i>
 						<?php $cart_items = edd_get_cart_contents(); $total = ($cart_items && is_array($cart_items)) ? count($cart_items) : 0; ?>
 						<span><?php echo $total; ?> item(s) - <?php edd_cart_total(); ?></span>
-					</div>
-				</div>
-				<h1 class="site-title" style="display:none"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			</div>
+					</td>
+					<td class="left-info"></td>
+				</tr>
+			</table>
+			<h1 class="site-title" style="display:none"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<nav id="site-navigation" class="main-navigation" role="navigation">
 				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'main-menu clearfix') ); ?>
 			</nav>
