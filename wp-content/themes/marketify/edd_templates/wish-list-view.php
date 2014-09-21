@@ -68,7 +68,7 @@ if($viewWhishlist === false) {
 	</div>
 	<div class="view-whishlist" >
 		<hr/>
-			<div class="view-icon-list fontsforweb_fontid_9785">VIEW: <a href="#" class="view box"></a><a class="view list" href="#"></a></div>
+			<div class="view-icon-list fontsforweb_fontid_9785"><span>VIEW: </span><a href="#" class="view box"></a><a class="view list" href="#"></a></div>
 		<hr/>
 	</div>
 	<br/>

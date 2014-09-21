@@ -1831,8 +1831,10 @@ body.product-display-inline .single-project .page-header,
 
 .content-grid-download .entry-image a,
 .content-grid-download .entry-image img,
+.download-product-details .entry-image .image-placeholder,
 .content-grid-download .entry-image .image-placeholder {
 	display: block;
+	font-family:icomoon;
 }
 
 .content-grid-download .entry-image img {
@@ -1840,13 +1842,15 @@ body.product-display-inline .single-project .page-header,
 	height: 160px;
 }
 
-.content-grid-download .entry-image .image-placeholder {
+.content-grid-download .entry-image .image-placeholder,
+.download-product-details .entry-image .image-placeholder {
 	min-height: 160px;
 	background: #eee;
 	position: relative;
 }
 
-.content-grid-download .entry-image .image-placeholder:before {
+.content-grid-download .entry-image .image-placeholder:before,
+.download-product-details .entry-image .image-placeholder:before {
 	color: #bbb;
 	content: '\e69c';
 	width: 20px;
@@ -4948,7 +4952,7 @@ input.search-field-input {
 	padding: 10px;
 }
 
-.vendor hr, .view-whishlist hr {
+.vendor hr, .view-whishlist hr, .post-container hr {
 	height: 14px;
 	overflow: hidden;
 	border: none;
@@ -4959,13 +4963,14 @@ input.search-field-input {
 	font-weight: bold;
 	padding-left:10px;
 	line-height:20px;
+	font-family:'GothamBook', 'Source Sans Pro', sans-serif !important;
 }
 
 .vendor .teacher-author {
 	padding: 0px 10px;
 }
 
-.vendor hr:after, .view-whishlist hr:after {
+.vendor hr:after, .view-whishlist hr:after, .post-container hr:after {
 	content:"............................................................................................................";
 	letter-spacing: 4px; /* Use letter-spacing to increase space between dots*/
 }
@@ -4973,10 +4978,10 @@ input.search-field-input {
 .vendor .right-container .download-product-review-details {
 	margin-top:10px;
 }
-.vendor .glyphicon {
+.vendor .glyphicon, .glyphicon-play {
 	font-family:'Glyphicons Halflings' !important;
-	font-size: 9px;
-	top:-1px;
+	font-size: 9px !important;
+	top:-1px !important;
 }
 .vendor .title-top-container {
 	line-height: 30px;
@@ -5018,26 +5023,9 @@ input.search-field-input {
 	min-height: 200px;
 }
 
-
-
 .wishlist .view-whishlist .entry-image .image-placeholder {
 	min-height: 160px;
 	background: #eee;
-	display:block;
-	font-family:icomoon;
-}
-
-.wishlist .view-whishlist .entry-image .image-placeholder:before {
-	color: #bbb;
-	content: '\e69c';
-	width: 20px;
-	height: 20px;
-	text-align: center;
-	top: 50%;
-	left: 50%;
-	margin-top: -10px;
-	margin-left: -10px;
-	position: absolute;
 }
 
 .wishlist .view-whishlist .entry-image {
@@ -5103,7 +5091,7 @@ input.search-field-input {
 	margin-top: 5px;
 }
 .whishlist-footer .remove i.icon{
-	width: 19px; height:25px;display:inline-block;
+	width: 19px; height:11px;display:inline-block;
 	background: url('images/remove-icon.png') center right no-repeat
 }
 .whishlist-footer .order {
@@ -5269,7 +5257,7 @@ i.add-wl {
 }
 
 
-.teacher-container .teacher-info .teacher-name {
+.teacher-container .teacher-info .teacher-name, .post-container .right-post .user-info .info .teacher-name {
 	font-size: 24px;
 	line-height: 26px;
 }
@@ -5356,6 +5344,236 @@ i.add-wl {
 	float: none;
 	padding:20px;
 }
+
+.post-container {
+	min-width: 1000px;
+	max-width: 1000px;
+	margin:auto;
+}
+.post-container .left-post {
+	width: 66%;
+}
+
+.post-container .left-post .more-images {
+	
+}
+.post-container .left-post .more-images img {
+	width: 48px; height:48px;
+	margin: 10px 5px 0px 5px;
+	cursor: pointer;
+}
+
+.post-container .left-post .header-container {
+	font-size: 12px;
+}
+
+.post-container .left-post .post-title {
+	font-size: 24px;
+	text-transform: uppercase;
+	text-align: left;
+	padding: 20px 0px 20px 0px;
+	letter-spacing: 3px;
+}
+.post-container .left-post .post-header .post-title {
+	padding-left: 5px;
+}
+
+.post-container .left-post .form-horizontal .control-group {
+	text-align: left;
+	padding-top: 10px;
+	padding-left: 25px;
+	max-width: 450px;
+	min-width: 383px;
+}
+
+.post-container .left-post .form-horizontal .control-group .controls div {
+	display: inline-block;
+}
+.post-container .left-post .teacher-info .form-horizontal .control-label {
+	text-align: left;
+	width: 80px;
+	display: inline-block;
+}
+.post-container .left-post .teacher-info .form-horizontal .lv2 {
+	width: 120px;
+}
+.post-container .left-post .teacher-info .form-horizontal .ratings {
+	margin-left: 40px;
+}
+.post-container .left-post .teacher-info .form-horizontal .left {
+	display:block;
+}
+.post-container .left-post .teacher-info .form-horizontal .left {
+	display:block;
+}
+.post-container .left-post .teacher-info .form-horizontal .file-comment {
+	width: 235px;
+	float: left;
+	display:block;
+	margin:5px 0px;
+}
+
+.post-container .download-product-details {
+	padding:10px;
+}
+.post-container .left-post .header-container .download-product-details {
+	width:205px;
+}
+
+.post-container .left-post .description-post {
+	
+}
+.post-container .left-post .info-post {
+	padding-top:10px;
+}
+.post-container .left-post .info-post span {
+	padding-left:60px;
+}
+.post-container .left-post .description-post .report-post {
+	margin-top:35px;
+}
+
+.post-container .left-post .comment-post .row {
+	margin: 15px -5px 0px -5px;
+}
+.post-container .left-post .comment-post .col-md-4 {
+	font-size: 12px;
+	padding:0px 0px 0px 5px;
+}
+
+.post-container .left-post .comment-post .col-md-4 .type-ratings {
+	width: 115px;
+}
+.post-container .left-post .comment-post .col-md-4 div {
+	height: 24px;
+	vertical-align:top;
+}
+
+.post-container .comments-title {display: none;}
+
+
+.report-icon {
+	display: inline-block;
+	width: 16px; height: 16px;
+	background: url('images/flag.png') center no-repeat;
+}
+
+.post-container .right-post {
+	width: 32%;
+	margin: 50px 0px 0px 20px;
+}
+
+.post-container .right-post .action-container {
+	padding: 30px 20px;
+}
+
+.post-container .right-post .type {
+	font-size: 13px;
+}
+.post-container .right-post .price {
+	font-size: 24px;
+	font-weight: bold;
+}
+
+.post-container .right-post .add-to-card {
+	color: #fff;
+	background: #b4d2d0;
+	padding: 2px 10px;
+	letter-spacing: 2px;
+	margin-top: 10px;
+	width: 184px;
+	font-size:13px;
+}
+.post-container .right-post .by-licence {
+	color: #fff;
+	background: #ef4545;
+	padding: 2px 10px;
+	letter-spacing: 2px;
+	margin-top: 10px;
+	width: 184px;
+	font-size:10px;
+}
+.post-container .right-post .add-wish-list {
+	padding: 10px 0px;
+}
+
+.post-container .right-post .user-info .avatar-info {
+	width: 38%; margin-top: 25px;
+}
+.post-container .right-post .user-info .radius50 {
+	width: 80px;padding: 5px;
+}
+.post-container .right-post .user-info .radius50 img{
+	border-radius: 50%;
+}
+
+.post-container .right-post .user-info .info {
+	width: 62%;
+	font-size:12px;padding-top:20px;
+}
+.post-container .right-post .user-info .info .user-rating {
+	padding-top:10px;
+}
+.post-container .right-post .user-info .info .teacher-follow img {
+	margin: 1px -2px 0px 0px;
+	vertical-align: top;
+}
+ 
+.radius50 {
+	border-radius: 50%;
+}
+
+.container .right-post .wishlist {
+	width: 100%;
+	padding-left: 20px;
+}
+
+.post-container .right-post .content-grid-download {
+	width: 210px;
+}
+
+
+
+
+
+.post-container .right-post .download-list {
+	overflow: inherit;
+}
+
+.post-container .right-post .top-list {
+	background: url('images/left_menu_cate.png') left top no-repeat;
+	height: 38px;
+	margin-left: -20px;
+	margin-top: 25px;
+	padding-left: 25px;
+	vertical-align: middle;
+}
+.post-container .right-post .top-list span {
+	background: #b4d2d0;
+	display: inline-block;
+	height: 30px;
+	line-height: 28px;
+	padding-top: 2px;
+	padding-right: 10px;
+	vertical-align: middle;
+	color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

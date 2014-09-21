@@ -14,6 +14,7 @@ if ( ! $author ) {
 	$author = get_current_user_id();
 }
 
+$avatar = get_avatar( $author, 150, apply_filters( 'marketify_default_avatar', null ) );
 get_header(); ?>
 
 
@@ -54,7 +55,7 @@ get_header(); ?>
 								<div class="teacher-autors image-info left">
 									<div class="content-grid-download">
 										<div class="entry-image">
-											<img src="<?php echo content_url();?>/uploads/edd/2014/08/Tulips-640x520.jpg"/>
+											<?php echo $avatar;?>
 										</div>
 									</div>
 								</div>
@@ -64,7 +65,7 @@ get_header(); ?>
 									<div class="teacher-ratings gray-light">Overall User Rating: <span>4.0 /4.0</span></div>
 									<div class="teacher-store gray-light">Products in my store: <span>47</span></div>
 									<div class="teacher-follow gray-light">
-										<img width="14px" src="http://localhost/Professi/wp-content/themes/marketify/images/star12x11.png"/>
+										<img width="14px" src="<?php echo content_url();?>/themes/marketify/images/star12x11.png"/>
 										<strong>Follow me </strong><span>(675 Followers)</span></div>
 								</div>
 							</div>
