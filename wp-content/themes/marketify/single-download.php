@@ -30,15 +30,18 @@ $author = get_the_author();
 								<?php if ( class_exists( 'MultiPostThumbnails' ) && MultiPostThumbnails::get_the_post_thumbnail( 'download', 'grid-image' ) ) : ?>
 								<?php MultiPostThumbnails::the_post_thumbnail( 'download', 'grid-image', null, 'content-grid-download' ); ?>
 								<?php elseif ( has_post_thumbnail() ) : ?>
-									<?php the_post_thumbnail( 'content-grid-download' ); ?>
+									 <?php $full_img = wp_get_attachment_image_src(get_post_thumbnail_id(), 'full');  ?>
+									<a class="image-box" href="<?php echo $full_img[0]; ?>">
+										<?php the_post_thumbnail("content-grid-download"); ?>
+									</a>
 								<?php else : ?>
 									<span class="image-placeholder"></span>
 								<?php endif; ?>
 							</div>
 							<div class="more-images">
-								<img src="http://localhost/Professi/wp-content/uploads/edd/2014/08/Tulips-640x520.jpg"/>
-								<img src="http://localhost/Professi/wp-content/uploads/edd/2014/08/Tulips-640x520.jpg"/>
-								<img src="http://localhost/Professi/wp-content/uploads/edd/2014/08/Tulips-640x520.jpg"/>
+								<img src="<?php echo content_url();?>/uploads/edd/2014/08/Tulips-640x520.jpg"/>
+								<img src="<?php echo content_url();?>/uploads/edd/2014/08/Tulips-640x520.jpg"/>
+								<img src="<?php echo content_url();?>/uploads/edd/2014/08/Tulips-640x520.jpg"/>
 							</div>
 						</div>
 					</div>

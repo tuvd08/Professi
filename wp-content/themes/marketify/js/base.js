@@ -120,7 +120,8 @@
 				return 'CHECKOUT CART';
 		}
 	);
-	
+	//
+	$('.image-box').fancybox();
 	$('#input-search-field').on('keydown', Base.enterSearch);
 	Base.widthMenu();
 	//

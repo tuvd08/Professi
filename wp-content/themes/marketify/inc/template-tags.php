@@ -29,7 +29,7 @@ function marketify_downloads_section_title() {
 		} else if (isset($GLOBALS['is_search']) && $GLOBALS['is_search'] == true) {
 			printf( __( 'SEACH RESULTS', 'marketify' ), $base, $order );
 		} else {
-			printf( __( 'All %s%s', 'marketify' ), $base, $order );
+			printf( __( 'All:<strong> %s%s</strong>', 'marketify' ), $base, $order );
 		}
 	}
 }
