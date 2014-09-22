@@ -315,7 +315,7 @@ body #edd-wl-modal input[type="radio"]:focus {
 	margin-bottom: 2em;
 }
 
-#edd_checkout_form_wrap label {
+#edd_checkout_user_info label {
 	display:block;
 	position: relative;
 	line-height: 100%;

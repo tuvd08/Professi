@@ -33,23 +33,52 @@ function edd_checkout_form() {
 
 			edd_checkout_cart();
 ?>
+	<div class="clearfix">
+		<div class="left-post left"><!--#left-post -->
+			<header class="post-header">
+				<div class="post-title fontsforweb_fontid_9785">
+					<span>CHECKOUT</span>
+				</div>
+				<div class="note1 gray-light">Enter your payment information and submit order.</div>
+				<div class="note2 gray-light">Choose a payment method and enter your billing information below..</div>
+			</header>
+			<hr/>
+			<br/>
 			<div id="edd_checkout_form_wrap" class="edd_clearfix">
 				<?php do_action( 'edd_before_purchase_form' ); ?>
-				<form id="edd_purchase_form" class="edd_form" action="<?php echo $form_action; ?>" method="POST">
+				<form id="edd_purchase_form" class="edd_form form-horizontal" role="form" action="<?php echo $form_action; ?>" method="POST">
 					<?php
-					do_action( 'edd_checkout_form_top' );
-
+				//	do_action( 'edd_checkout_form_top' );
+/*
 					if ( edd_show_gateways() ) {
-						do_action( 'edd_payment_mode_select'  );
+						//do_action( 'edd_payment_mode_select'  );
 					} else {
 						do_action( 'edd_purchase_form' );
 					}
+*/
+/*     ADD MORE STATIC HTML            */
+?>
+				<div class="form-group form-group-sm clearfix">
+					<label class="control-label" for="exampleInputEmail1">Email address</label>
+					<div class="controls">
+						<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+					</div>
+				</div>
+<?php
+					do_action( 'edd_purchase_form' );
+
 
 					do_action( 'edd_checkout_form_bottom' )
 					?>
 				</form>
 				<?php do_action( 'edd_after_purchase_form' ); ?>
 			</div><!--end #edd_checkout_form_wrap-->
+			
+		</div><!--#left-post -->
+		<div class="right-post left">	
+		
+		</div>
+	</div>		
 		<?php
 		else:
 			do_action( 'edd_cart_empty' );

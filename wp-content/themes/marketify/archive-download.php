@@ -7,7 +7,10 @@
  * @package Marketify
  */
 
-get_header(); ?>
+get_header(); 
+
+global $wp_query;
+?>
 
 	<div class="container">
 		<div class="home-container clearfix">

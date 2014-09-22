@@ -43,13 +43,14 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 }
 html {
 	font-size: 62.5%; /* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */
-	overflow-y: scroll; /* Keeps page centred in all browsers regardless of content height */
+	overflow-y: scroll !important; /* Keeps page centred in all browsers regardless of content height */
 	-webkit-text-size-adjust: 100%; /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
 	-ms-text-size-adjust: 100%; /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
 }
-body {
+html, body {
 	background: #fff;
 	padding: 0 !important;
+	margin: 0 !important;
 }
 article,
 aside,
@@ -325,27 +326,6 @@ input::-moz-focus-inner { /* Corrects inner padding and border displayed oddly i
 	padding: 0;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="url"],
-input[type="password"],
-input[type="search"],
-textarea {
-	line-height: 25px;
-	color: #515a63;
-	padding: 10px;
-	background: #fff;
-	border: 1px solid #bdc3c7;
-	display: block;
-	width: 100%;
-	box-shadow: none;
-	border-radius: 0;
-
-	-webkit-box-sizing: border-box;
-	-moz-box-siding:		border-box;
-	box-sizing:				 border-box;
-}
-
 .bbp-the-content-wrapper {
 	border: 1px solid #bdc3c7;
 }
@@ -367,14 +347,6 @@ textarea {
 	overflow: auto; /* Removes default vertical scrollbar in IE6/7/8/9 */
 	vertical-align: top; /* Improves readability and alignment in all browsers */
 	width: 98%;
-}
-
-label {
-	font: 700 16px/normal 'Montserrat', sans-serif;
-	text-transform: uppercase;
-	letter-spacing: 0.10em;
-	margin-bottom: 10px;
-	display: block;
 }
 
 .minimal label {
@@ -3299,12 +3271,14 @@ body .marketify_widget_slider_hero .soliloquy-theme-classic .soliloquy-pager {
 	background-image: linear-gradient(to bottom,#fff,#f1f1f1);
 	background-repeat: repeat-x;
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff',endColorstr='#fff1f1f1',GradientType=0);
-
+NOTE
 * */
 
 .wishlist .view-whishlist .entry-image,.page-id-22 .content-area, .page-id-23 .content-area,
 .download-single-widget,
 .download-product-details,
+.comment-container .comment-list .comment-author,
+.checkout-container .edd_empty_cart,
 .download-product-review-details {
 	border-radius: 10px;
 	-webkit-box-shadow: 0px 0px 5px 0.5px rgba(13,13,13,0.27);
@@ -5559,19 +5533,80 @@ i.add-wl {
 	color: #fff;
 }
 
+.comment-container {
+	padding-top: 30px;
+}
+
+.comment-container .comment-list .comment-author {
+	border-radius: 50%;
+	position: relative;
+	overflow: inherit;
+	padding: 5px;
+}
+.comment-container .comment-list .comment-author .fn{
+	position: absolute;
+	z-index: 1000;
+	bottom: -30px;
+	font-size: 20px;
+	word-break: break-word;
+	font-family:'gothic' !important;
+	text-align: center;
+	min-width: 190px;
+	left: -50px;
+	text-transform: capitalize ;
+}
 
 
+.image-box .wp-post-image {
+	min-height: 160px;
+	width: 100%;
+}
 
 
+.checkout-container .edd_empty_cart {
+	display: block;
+	padding: 80px;
+	width: 100%;
+	text-align: center;
+	font-size: 45px;
+	margin-top: 25px;
+}
+
+.checkout-container .content-area {padding:0px;}
 
 
+.checkout-container .left-post {
+	border: 1px solid #bdc3c7;
+}
+.checkout-container .right-post {
+	border: 1px solid gray;
+}
+.checkout-container .left-post .post-header .post-title {
+	padding-bottom: 10px;
+	letter-spacing:5px;
+}
+.checkout-container .left-post .post-header .note1 {
+	margin-bottom: 40px;
+	font-size:12px;
+}
+.checkout-container .left-post .post-header .note2 {
+	margin-left: 40px;
+	font-size:12px;
+}
 
+.checkout-container .form-horizontal .form-group {
+	width: 100%;
+}
 
-
-
-
-
-
+.checkout-container .form-horizontal .form-group .control-label {
+	width: 180px;
+	display:inline-block;
+	padding-right: 10px;
+}
+.checkout-container .form-horizontal .form-group .controls {
+	width: 470px;
+	display:inline-block;
+}
 
 
 
