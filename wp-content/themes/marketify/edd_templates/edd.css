@@ -285,7 +285,7 @@ body #edd-wl-modal input[type="radio"]:focus {
 -------------------------------------------------------------- */
 
 #edd_checkout_form_wrap fieldset {
-	margin-bottom: 2em;
+	margin-bottom: 10px;
 	padding: 0;
 	border: 0;
 	clear: both;
@@ -313,13 +313,6 @@ body #edd-wl-modal input[type="radio"]:focus {
 
 #edd_checkout_form_wrap p {
 	margin-bottom: 2em;
-}
-
-#edd_checkout_user_info label {
-	display:block;
-	position: relative;
-	line-height: 100%;
-	margin: 0;
 }
 
 #edd_checkout_form_wrap span.edd-description {
