@@ -81,14 +81,17 @@ function edd_checkout_form() {
 				<?php $cart_items = edd_get_cart_contents(); $total = ($cart_items && is_array($cart_items)) ? count($cart_items) : 0; ?>
 				<div class="number-item"><?php echo $total; ?> ITEM(S)</div>
 				<div class="pay-item">Total: <?php edd_cart_total(); ?></div>
-				<div class="text-line clearfix">Redeem as a gift certificate <i class="row-down caret right"></i></div>
-				<hr/>
-				<div class="text-line clearfix">Apply a promo code <i class="row-down caret right"></i></div>
-				<hr/>
-				<div class="text-line clearfix">Redeem TpT credits <i class="row-down caret right"></i></div>
-				<hr/>
-				<br/><br/>
+                                <ul class="text-line">
+                                    <li class=" clearfix">Redeem as a gift certificate <i class="row-down caret right"></i></li>
+				
+                                    <li class="clearfix">Apply a promo code <i class="row-down caret right"></i></li>
+
+                                    <li class="clearfix">Redeem TpT credits <i class="row-down caret right"></i></li>
+
+                                </ul>
+				
 			</div>
+
 		</div>
 	</div>		
 		<?php
@@ -713,10 +716,18 @@ add_action( 'edd_purchase_form_before_submit', 'edd_terms_agreement' );
  */
 function edd_checkout_final_total() {
 ?>
-<p id="edd_final_total_wrap">
-	<strong><?php _e( 'Purchase Total:', 'edd' ); ?></strong>
-	<span class="edd_cart_amount" data-subtotal="<?php echo edd_get_cart_subtotal(); ?>" data-total="<?php echo edd_get_cart_subtotal(); ?>"><?php edd_cart_total(); ?></span>
-</p>
+        <div class="summary">
+             <div class=" pull-right" style="margin-top: 24px;">Redeem as a gift certificate <i class="row-down caret right"></i></div>
+           
+            <div class="top-list"><span> Review Items</span>
+            </div>
+            <p id="edd_final_total_wraps">
+
+            <strong><?php _e( 'Purchase Total:', 'edd' ); ?></strong>
+            <span class="edd_cart_amount" data-subtotal="<?php echo edd_get_cart_subtotal(); ?>" data-total="<?php echo edd_get_cart_subtotal(); ?>"><?php edd_cart_total(); ?></span>
+            </p>
+        </div>
+        
 <?php
 }
 add_action( 'edd_purchase_form_before_submit', 'edd_checkout_final_total', 999 );
@@ -791,8 +802,8 @@ function edd_checkout_button_purchase() {
 	}
 
 	ob_start();
-?>
-	<input type="submit" class="edd-submit <?php echo $color; ?> <?php echo $style; ?>" id="edd-purchase-button" name="edd-purchase" value="<?php echo $complete_purchase; ?>"/>
+        ?> <p style="text-align:center">Please review your order before clicking "submit order" All sales are final</p>
+	<input type="submit" class="edd-submit <?php echo $color; ?> <?php echo $style; ?>" id="edd-purchase-button" name="edd-purchase" value="submit order"/>
 <?php
 	return apply_filters( 'edd_checkout_button_purchase', ob_get_clean() );
 }
