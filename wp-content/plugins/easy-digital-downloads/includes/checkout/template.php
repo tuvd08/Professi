@@ -76,7 +76,19 @@ function edd_checkout_form() {
 			
 		</div><!--#left-post -->
 		<div class="right-post left">	
-		
+			<div class="download-product-details download-list fontsforweb_fontid_9785"><!--#action-container -->
+				<div class="top-list"><span>ORDER SUMMARY</span></div>
+				<?php $cart_items = edd_get_cart_contents(); $total = ($cart_items && is_array($cart_items)) ? count($cart_items) : 0; ?>
+				<div class="number-item"><?php echo $total; ?> ITEM(S)</div>
+				<div class="pay-item">Total: <?php edd_cart_total(); ?></div>
+				<div class="text-line clearfix">Redeem as a gift certificate <i class="row-down caret right"></i></div>
+				<hr/>
+				<div class="text-line clearfix">Apply a promo code <i class="row-down caret right"></i></div>
+				<hr/>
+				<div class="text-line clearfix">Redeem TpT credits <i class="row-down caret right"></i></div>
+				<hr/>
+				<br/><br/>
+			</div>
 		</div>
 	</div>		
 		<?php

@@ -5577,9 +5577,7 @@ i.add-wl {
 
 .checkout-container .left-post {
 	border: 1px solid #bdc3c7;
-}
-.checkout-container .right-post {
-	border: 1px solid gray;
+	width: 70%;
 }
 .checkout-container .left-post .post-header .post-title {
 	padding-bottom: 10px;
@@ -5609,8 +5607,33 @@ i.add-wl {
 }
 
 
+.checkout-container .right-post {
+	width: 28%;
+}
 
-
+.checkout-container .right-post .download-list {
+	padding: 20px 40px 20px 20px;
+}
+.checkout-container .right-post .download-list .top-list {
+	margin-left:-29px;
+}
+.checkout-container .right-post .download-list .top-list span{
+	width:100%;
+}
+.checkout-container .right-post .download-list .number-item {
+	text-align: right;
+	font-size:24px;
+	font-weight: bold;
+}
+.checkout-container .right-post .download-list .pay-item {
+	text-align: right;
+}
+.checkout-container .right-post .download-list .text-line {
+	margin-top: 10px;
+}
+.checkout-container .right-post .download-list .caret {
+	margin-top: 10px;
+}
 
 
 
