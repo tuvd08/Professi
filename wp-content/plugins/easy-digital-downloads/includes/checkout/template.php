@@ -717,7 +717,7 @@ add_action( 'edd_purchase_form_before_submit', 'edd_terms_agreement' );
 function edd_checkout_final_total() {
 ?>
         <div class="summary">
-             <div class=" pull-right" style="margin-top: 24px;">Redeem as a gift certificate <i class="row-down caret right"></i></div>
+             <div class=" pull-right" style="margin-top: 24px;">Redeem as a gift certificate <i class="row-down caret "></i></div>
            
             <div class="top-list"><span> Review Items</span>
             </div>

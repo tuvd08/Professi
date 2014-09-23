@@ -5670,10 +5670,16 @@ select,input[type="text"],input[type="email"], input[type="password"] {
       height: 30px;
 }
 select,input[type="text"],input[type="email"], input[type="password"] ,textarea {
-    border:1px solid #a1a1a1;
-    background:white;  
+    border:1px solid #a1a1a1;    padding: 6px 12px;
+    background:white;   border-radius: 0;
 }
-
+.checkout-container .form-horizontal .form-group .control-label {
+    display: block;
+    float: left;
+    padding-right: 10px;
+    padding-top: 3px;
+    width: 180px;
+}
 #edd_purchase_submit {    
  background-color: #fff;
     border-radius: 10px;
