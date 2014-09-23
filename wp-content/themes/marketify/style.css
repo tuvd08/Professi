@@ -5705,6 +5705,7 @@ select,input[type="text"],input[type="email"], input[type="password"] ,textarea 
     margin-top: 25px;
     padding-left: 25px;
     vertical-align: middle;
+    line-height: 30px;
     color: #fff;
     text-transform: uppercase;
 }
