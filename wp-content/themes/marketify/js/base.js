@@ -123,6 +123,26 @@
 	//
 	$('.image-box').fancybox();
 	$('#input-search-field').on('keydown', Base.enterSearch);
+	
+	$('#show-detail').on('click', function(evt) {
+			var info = $('#items-list');
+			if(info.find('table').length == 0) {
+				var div = $('<div style="display:none"><br/></div>')
+				div.append($('#edd_checkout_cart'));
+				div.append($('<hr/>'));
+				info.append(div);
+				//
+				$('#edd_checkout_cart').show().find('tfoot').hide();
+			}
+			
+			if(info.find('div:first').attr('style').indexOf('none') > 0) {
+				info.find('div:first').show();
+			} else {
+				info.find('div:first').hide();
+			}
+		
+	});
+	
 	Base.widthMenu();
 	//
 	if(window.searchResult && window.searchResult == true) {
