@@ -28,7 +28,7 @@ get_header(); ?>
         	<?php if(!$author):?>
 	            <div class="title-top-container header clearfix">
 	                <div class="title-top page-title fontsforweb_fontid_9785 left">O U R&nbsp; T E A C H E R&nbsp;  A U T O R S</div>
-	                <div class="title-right right"><a href="/fes-vendor">See all <i class="glyphicon glyphicon-play"></i></a></div>
+	                <div class="title-right right"><a href="<?php echo esc_url( home_url( '/fes-vendor' ) ); ?>">See all <i class="glyphicon glyphicon-play"></i></a></div>
 	            </div>
 	            <div class="download-product-review-details content-items clearfix">
 	                <section id="primary" class="content-area col-md-12 col-sm-7 col-xs-12">
@@ -125,8 +125,8 @@ get_header(); ?>
                        		 //wp_reset_query();
                         ?>
                     </div>
-                    <div class="title-right left" style="padding-left: 50px;"><a href="fes-vendor/<?php echo $author->display_name;?>">See all my <?php echo $products;?> products <i class="glyphicon glyphicon-play"></i></a></div>
-                    <div class="title-right right" style="padding-right: 50px;"><a href="fes-vendor/<?php echo $author->display_name;?>">See all my <?php echo $products;?> products <i class="glyphicon glyphicon-play"></i></a></div>
+                    <div class="title-right left" style="padding-left: 50px;"><a href="<?php echo esc_url( home_url( '/fes-vendor/'.$author->display_name ) ); ?>">See all my <?php echo $products;?> products <i class="glyphicon glyphicon-play"></i></a></div>
+                    <div class="title-right right" style="padding-right: 50px;"><a href="<?php echo esc_url( home_url( '/fes-vendor/'.$author->display_name ) ); ?>">See all my <?php echo $products;?> products <i class="glyphicon glyphicon-play"></i></a></div>
                 </div>
                 <hr/>
               </div>
@@ -135,7 +135,7 @@ get_header(); ?>
             
             <div class="title-top-container header clearfix">
                 <div class="title-top page-title fontsforweb_fontid_9785 left">C R E A T E D&nbsp;  B Y&nbsp;  T E A C H E R S</div>
-                <div class="title-right right"><a href="/fes-vendor">See all <i class="glyphicon glyphicon-play"></i></a></div>
+                <div class="title-right right"><a href="<?php echo esc_url( home_url( '/fes-vendor' ) ); ?>">See all <i class="glyphicon glyphicon-play"></i></a></div>
             </div>
             
             <div class="download-product-review-details content-items clearfix">

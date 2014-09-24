@@ -124,6 +124,10 @@
 	$('.image-box').fancybox();
 	$('#input-search-field').on('keydown', Base.enterSearch);
 	
+	//$('input[type=number]').attr('type', function() {if(jQuery.browser.mozilla) {return 'text'; } return 'number';});
+	
+	
+	
 	$('#show-detail').on('click', function(evt) {
 			var info = $('#items-list');
 			if(info.find('table').length == 0) {

@@ -24,7 +24,7 @@ function printCheckout($val = '') {
 	}
 } 
 ?>
-	<div class="container <?php printCheckout('post-container checkout-container');?> clearfix">
+	<div class="container post-container<?php printCheckout(' checkout-container');?> clearfix">
 		
 		<div id="content" class="site-content row">
 	
