@@ -5770,3 +5770,11 @@ select,input[type="text"],input[type="email"], input[type="password"] ,textarea 
     width: 100%;
     padding:0;
 }
+
+#fes_login_registration_form_row_left .fes-form-login-form input {
+	width: 80%;
+}
+
+select {
+	font-family: 'gothic' !important;
+}

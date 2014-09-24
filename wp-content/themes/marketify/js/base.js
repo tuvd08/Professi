@@ -59,6 +59,7 @@
 			if(window.lastSearchCats) {
 				$('#quick-search-form').find('#absc_search_cat:first').val( window.lastSearchCats );
 			}
+			
 			var select_parent = $('#selected-categories');
 			select_parent.find('span.icon-cat').on('click', function() {
 				var rVal = $(this).data('slug');
@@ -92,10 +93,22 @@
 				}
       }
       return arr;
+		},
+		rowMenu : function() {
+			var parent = $('#edd_categories_tags_widget-4');
+			var liLv1 = parent.find('.edd-taxonomy-widget').find(' > li');
+			//
+			liLv1.each(function(index) {
+				var uls = $(this).find('ul');
+				var liLv2 = uls.find(' > li');
+				liLv2.each(function(index) {
+					if($(this).find('ul').length > 0) {
+						$(this).addClass('right-arrow');
+					}
+				});
+			});
 		}
-		
 	};
-	$()
 	//
 	
 	$('#main-add-to-card').on('click', function(evt) {
@@ -148,6 +161,8 @@
 	});
 	
 	Base.widthMenu();
+	
+	Base.rowMenu();
 	//
 	if(window.searchResult && window.searchResult == true) {
 		Base.processSearch();
